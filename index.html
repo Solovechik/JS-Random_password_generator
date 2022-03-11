@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./css/style.css">
+        <title>Random password generator</title>
+    </head>
+    <body>
+        <div id="app">
+            <h1 id="app-title"><p style="color: white;">Generate a</p>random password</h1>
+            <h3 class="app-text">Never use an insecure password again.</h3>
+            <div id="all">
+            <div id="length">
+                <p>Your password length:</p>
+                <input id="length-input" type="number" min="8" max="20" onkeyup="this.value > 20 ? this.value = 20 : (this.value < 0 ? this.value = 8 : this.value);" inputmode="numeric" placeholder="8"/>
+            </div>
+            
+            <div id="option-block">
+                <label><input type="checkbox" id="option-letters" checked>Letters</label>
+                <label><input type="checkbox" id="option-capitals">Capital letters</label>
+                <label><input type="checkbox" id="option-digits">Digits</label>
+                <label><input type="checkbox" id="option-symbols">Symbols</label>
+                <label><input type="checkbox" id="option-confusing">Confusing symbols(ilLoO01)</label>
+            </div>
+        </div>
+            <button id="app-generate-btn" onclick="generatePassword()"><img src="./images/Icon.png"/>Generate passwords</button>
+            <hr>
+            <div id="password-list">
+                <p>Click to copy:</p>
+                <div id="password1" class="psw-placeholder" onclick="copyPassword(1)"></div>
+                <div id="password2" class="psw-placeholder" onclick="copyPassword(2)"></div>
+                <div id="password3" class="psw-placeholder" onclick="copyPassword(3)"></div>
+                <div id="password4" class="psw-placeholder" onclick="copyPassword(4)"></div>
+            </div>
+        </div>
+        <script src="./js/script.js"></script>
+    </body>
+</html>
